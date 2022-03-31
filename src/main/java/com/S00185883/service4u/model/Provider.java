@@ -107,10 +107,8 @@ package com.S00185883.service4u.model;//package com.S00185883.service4u.model;
 //
 //}
 // Importing required classes
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -121,7 +119,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-// Class
+@Table(name = "provider")
 public class Provider {
 
     @Id
