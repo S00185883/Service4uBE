@@ -20,7 +20,6 @@ public interface ProvidersService {
     // Update operation
     Provider updateProvider(Provider provider,
                                 Long providerId);
-
     // Delete operation
     void deleteProviderById(Long providerId);
 }

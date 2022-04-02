@@ -80,7 +80,10 @@ public class Sector {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="sectorId")
     private String sectorId;
+    @Column(name="type")
     private String type;
+    @Column(name="description")
     private String description;
 }

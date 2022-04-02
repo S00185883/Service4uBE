@@ -34,11 +34,11 @@ public class ProviderServiceImpl
                 .get();
 
         if (Objects.nonNull(
-                provider.getProvidername())
+                provider.getName())
                 && !"".equalsIgnoreCase(
-                provider.getProvidername())) {
-            depDB.setProvidername(
-                    provider.getProvidername());
+                provider.getName())) {
+            depDB.setName(
+                    provider.getName());
         }
 
         if (Objects.nonNull(

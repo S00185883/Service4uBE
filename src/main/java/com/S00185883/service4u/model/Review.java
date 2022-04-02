@@ -19,10 +19,16 @@ public class Review {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="reviewid")
     private Long reviewid;
+    @Column(name="providerid")
     private Long providerid;
+    @Column(name="customerid")
     private Long customerid;
+    @Column(name="review")
     private String review;
+    @Column(name="rating")
     private Integer rating;
+    @Column(name="date")
     private Date date;
 }

@@ -19,9 +19,14 @@ public class Services {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @Column(name="serviceId")
+    private Long serviceId;
+    @Column(name="name")
     private String name;
+    @Column(name="description")
     private String description;
+    @Column(name="price")
     private double price;
-private long providerid;
+    @Column(name="providerid")
+    private long providerid;
 }

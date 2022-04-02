@@ -15,8 +15,11 @@ public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="customerId")
     private Long customerId;
+    @Column(name="name")
     private String name;
+    @Column(name="location")
     private String location;
 
 

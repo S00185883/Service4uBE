@@ -124,12 +124,20 @@ public class Provider {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="providerId")
     private Long providerId;
-    private String providername;
+    @Column(name="name")
+    private String name;
+    @Column(name="addresslineone")
     private String addressLineOne;
+    @Column(name="addresslinetwo")
     private String addressLineTwo;
+    @Column(name="town")
     private String town;
+    @Column(name="county")
     private String county;
+    @Column(name="eircode")
     private String eircode;
+    @Column(name="sector")
     private Integer sector;
 }
