@@ -22,4 +22,7 @@ public interface ProvidersService {
                                 Long providerId);
     // Delete operation
     void deleteProviderById(Long providerId);
+    List<Provider> findByCounty(String county);
+    List<Provider> findBySector(Integer sector);
+
 }

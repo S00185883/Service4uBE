@@ -54,4 +54,16 @@ public class ProvidersController {
                 providerId);
         return "Deleted Successfully";
     }
+    @GetMapping("/providers/{county}")
+    public List<Provider> findByCounty(@PathVariable("county") String county)
+    {
+        return providersService.findByCounty(county);
+
+    }
+    @GetMapping("/providers/sector/{sector}")
+    public List<Provider> findBySector(@PathVariable("sector") Integer sector)
+    {
+        return providersService.findBySector(sector);
+
+    }
 }

@@ -9,5 +9,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface ProvidersRepository  extends JpaRepository<Provider, Long> {
+    public List<Provider> findByCounty(String county);
+    public List<Provider> findBySector(Integer sector);
 
 }

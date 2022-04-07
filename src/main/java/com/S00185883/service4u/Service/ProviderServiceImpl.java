@@ -87,4 +87,11 @@ public class ProviderServiceImpl
         providersRepository.deleteById(providerId);
 
     }
+    public List<Provider> findByCounty(String county) {
+        return (List<Provider>)
+                providersRepository.findByCounty(county);    }
+    public List<Provider> findBySector(Integer sector) {
+        return (List<Provider>)
+                providersRepository.findBySector(sector);    }
+
 }
