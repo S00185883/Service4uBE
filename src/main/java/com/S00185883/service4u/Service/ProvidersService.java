@@ -1,6 +1,7 @@
 package com.S00185883.service4u.Service;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import com.S00185883.service4u.Repository.ProvidersRepository;
 import com.S00185883.service4u.model.Provider;
@@ -24,4 +25,5 @@ public interface ProvidersService {
     void deleteProviderById(Long providerId);
     List<Provider> findByCounty(String county);
     List<Provider> findBySector(String sector);
+    Optional<Provider> findById(Long providerId);
 }

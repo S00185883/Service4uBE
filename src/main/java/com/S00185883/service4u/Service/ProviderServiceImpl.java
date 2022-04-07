@@ -5,6 +5,7 @@ package com.S00185883.service4u.Service;// Java Program to Illustrate Department
 // Importing required classes
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 import com.S00185883.service4u.Repository.ProvidersRepository;
 import com.S00185883.service4u.model.Provider;
@@ -99,13 +100,19 @@ public class ProviderServiceImpl
         providersRepository.deleteById(providerId);
 
     }
+    @Override
     public List<Provider> findByCounty(String county) {
         return (List<Provider>)
                 providersRepository.findByCounty(county);    }
+    @Override
     public List<Provider> findBySector(String sector) {
         return (List<Provider>)
                 providersRepository.findBySector(sector);    }
 
+    @Override
+    public Optional<Provider> findById(Long providerId) {
+        return providersRepository.findById(providerId);
+    }
 
 
 }

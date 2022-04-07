@@ -1,6 +1,7 @@
 package com.S00185883.service4u.Controller;
 
 import java.util.List;
+import java.util.Optional;
 // Importing required classes
 import javax.validation.Valid;
 
@@ -68,5 +69,11 @@ public class ProvidersController {
         return providersService.findBySector(sector);
 
     }
+    @GetMapping("/provider/{providerId}")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public Optional<Provider> findById(@PathVariable("providerId") Long providerId)
+    {
+        return providersService.findById(providerId);
 
+    }
 }
