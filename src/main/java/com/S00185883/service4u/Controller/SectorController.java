@@ -18,7 +18,7 @@ public class SectorController {
 
     // Save operation
     @PostMapping("/sectors")
-
+    @CrossOrigin(origins = "http://localhost:3000")
     public Sector saveSector(
             @Valid @RequestBody Sector sector)
     {
@@ -27,7 +27,7 @@ public class SectorController {
 
     // Read operation
     @GetMapping("/sectors")
-
+    @CrossOrigin(origins = "http://localhost:3000")
     public List<Sector> fetchSectorList()
     {
         return sectorService.fetchSectorList();
@@ -35,7 +35,7 @@ public class SectorController {
 
     // Update operation
     @PutMapping("/sectors/{id}")
-
+    @CrossOrigin(origins = "http://localhost:3000")
     public Sector
     updateDepartment(@RequestBody Sector sector,
                      @PathVariable("id") Long sectorId)
@@ -46,7 +46,7 @@ public class SectorController {
 
     // Delete operation
     @DeleteMapping("/sectors/{id}")
-
+    @CrossOrigin(origins = "http://localhost:3000")
     public String deleteSectorById(@PathVariable("id")
                                              Long sectorId)
     {

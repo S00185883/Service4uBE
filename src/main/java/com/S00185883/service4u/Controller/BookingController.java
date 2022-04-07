@@ -17,7 +17,7 @@ public class BookingController {
     @Autowired private BookingService bookingService;
     // Save operation
     @PostMapping("/bookings")
-
+    @CrossOrigin(origins = "http://localhost:3000")
     public Booking saveBooking(
             @Valid @RequestBody Booking booking)
     {
@@ -26,7 +26,7 @@ public class BookingController {
 
     // Read operation
     @GetMapping("/bookings")
-
+    @CrossOrigin(origins = "http://localhost:3000")
     public List<Booking> fetchBookingList()
     {
         return bookingService.fetchBookingList();
@@ -34,7 +34,7 @@ public class BookingController {
 
     // Update operation
     @PutMapping("/bookings/{id}")
-
+    @CrossOrigin(origins = "http://localhost:3000")
     public Booking
     updateDepartment(@RequestBody Booking booking,
                      @PathVariable("id") Long bookingId)
@@ -45,7 +45,7 @@ public class BookingController {
 
     // Delete operation
     @DeleteMapping("/bookings/{id}")
-
+    @CrossOrigin(origins = "http://localhost:3000")
     public String deleteBookingById(@PathVariable("id")
                                              Long bookingId)
     {

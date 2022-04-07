@@ -79,6 +79,18 @@ public class ProviderServiceImpl
             depDB.setSector(
                     provider.getSector());
         }
+        if (Objects.nonNull(provider.getPhone())
+                && !"".equalsIgnoreCase(
+                String.valueOf(provider.getPhone()))) {
+            depDB.setPhone(
+                    provider.getPhone());
+        }
+        if (Objects.nonNull(provider.getEmail())
+                && !"".equalsIgnoreCase(
+                String.valueOf(provider.getEmail()))) {
+            depDB.setEmail(
+                    provider.getEmail());
+        }
         return providersRepository.save(depDB);
     }
 
@@ -90,8 +102,10 @@ public class ProviderServiceImpl
     public List<Provider> findByCounty(String county) {
         return (List<Provider>)
                 providersRepository.findByCounty(county);    }
-    public List<Provider> findBySector(Integer sector) {
+    public List<Provider> findBySector(String sector) {
         return (List<Provider>)
                 providersRepository.findBySector(sector);    }
+
+
 
 }

@@ -18,7 +18,7 @@ public class ProvidersController {
 
     // Save operation
     @PostMapping("/providers")
-
+    @CrossOrigin(origins = "http://localhost:3000")
     public Provider saveProvider(
             @Valid @RequestBody Provider provider)
     {
@@ -26,8 +26,8 @@ public class ProvidersController {
     }
 
     // Read operation
-    @GetMapping("/providers")
-
+    @GetMapping("/providers/sector/")
+    @CrossOrigin(origins = "http://localhost:3000")
     public List<Provider> fetchProviderList()
     {
         return providersService.fetchProviderList();
@@ -35,7 +35,7 @@ public class ProvidersController {
 
     // Update operation
     @PutMapping("/providers/{id}")
-
+    @CrossOrigin(origins = "http://localhost:3000")
     public Provider
     updateDepartment(@RequestBody Provider provider,
                      @PathVariable("id") Long providerId)
@@ -46,7 +46,7 @@ public class ProvidersController {
 
     // Delete operation
     @DeleteMapping("/providers/{id}")
-
+    @CrossOrigin(origins = "http://localhost:3000")
     public String deleteProviderById(@PathVariable("id")
                                                Long providerId)
     {
@@ -55,15 +55,18 @@ public class ProvidersController {
         return "Deleted Successfully";
     }
     @GetMapping("/providers/{county}")
+    @CrossOrigin(origins = "http://localhost:3000")
     public List<Provider> findByCounty(@PathVariable("county") String county)
     {
         return providersService.findByCounty(county);
 
     }
     @GetMapping("/providers/sector/{sector}")
-    public List<Provider> findBySector(@PathVariable("sector") Integer sector)
+    @CrossOrigin(origins = "http://localhost:3000")
+    public List<Provider> findBySector(@PathVariable("sector") String sector)
     {
         return providersService.findBySector(sector);
 
     }
+
 }

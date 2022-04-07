@@ -18,7 +18,7 @@ public class ReviewsController {
 
     // Save operation
     @PostMapping("/reviews")
-
+    @CrossOrigin(origins = "http://localhost:3000")
     public Review saveReview(
             @Valid @RequestBody Review review)
     {
@@ -27,7 +27,7 @@ public class ReviewsController {
 
     // Read operation
     @GetMapping("/reviews")
-
+    @CrossOrigin(origins = "http://localhost:3000")
     public List<Review> fetchReviewList()
     {
         return reviewService.fetchReviewList();
@@ -35,7 +35,7 @@ public class ReviewsController {
 
     // Update operation
     @PutMapping("/reviews/{id}")
-
+    @CrossOrigin(origins = "http://localhost:3000")
     public Review
     updateDepartment(@RequestBody Review review,
                      @PathVariable("id") Long reviewId)
@@ -46,7 +46,7 @@ public class ReviewsController {
 
     // Delete operation
     @DeleteMapping("/reviews/{id}")
-
+    @CrossOrigin(origins = "http://localhost:3000")
     public String deleteReviewById(@PathVariable("id")
                                              Long reviewId)
     {

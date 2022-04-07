@@ -18,7 +18,7 @@ public class ServiceController {
 
     // Save operation
     @PostMapping("/services")
-
+    @CrossOrigin(origins = "http://localhost:3000")
     public Services saveServices(
             @Valid @RequestBody Services service)
     {
@@ -27,7 +27,7 @@ public class ServiceController {
 
     // Read operation
     @GetMapping("/services")
-
+    @CrossOrigin(origins = "http://localhost:3000")
     public List<Services> fetchServicesList()
     {
         return serviceService.fetchServicesList();
@@ -35,7 +35,7 @@ public class ServiceController {
 
     // Update operation
     @PutMapping("/services/{id}")
-
+    @CrossOrigin(origins = "http://localhost:3000")
     public Services
     updateDepartment(@RequestBody Services service,
                      @PathVariable("id") Long serviceId)
@@ -46,7 +46,7 @@ public class ServiceController {
 
     // Delete operation
     @DeleteMapping("/services/{id}")
-
+    @CrossOrigin(origins = "http://localhost:3000")
     public String deleteServicesById(@PathVariable("id")
                                            Long serviceId)
     {

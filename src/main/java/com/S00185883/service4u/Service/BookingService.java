@@ -1,7 +1,6 @@
 package com.S00185883.service4u.Service;
 
 import com.S00185883.service4u.model.Booking;
-import com.S00185883.service4u.model.Sector;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

@@ -139,5 +139,9 @@ public class Provider {
     @Column(name="eircode")
     private String eircode;
     @Column(name="sector")
-    private Integer sector;
+    private String sector;
+    @Column(name="phone")
+    private Long phone;
+    @Column(name="email")
+    private String email;
 }
