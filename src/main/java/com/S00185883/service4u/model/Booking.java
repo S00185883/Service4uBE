@@ -34,7 +34,9 @@ public class Booking {
     @Column(name="customerId")
     // @ManyToOne(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
     private long customerId;
-
+    @Column(name="providerId")
+    // @ManyToOne(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
+    private long providerId;
 
 
 }

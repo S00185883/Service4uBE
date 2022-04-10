@@ -35,6 +35,13 @@ public class BookingServiceImpl implements BookingService {
             depDB.setName(
                     booking.getName());
         }
+        if (Objects.nonNull(
+                booking.getProviderId())
+                && !"".equalsIgnoreCase(
+                String.valueOf(booking.getProviderId()))) {
+            depDB.setProviderId(
+                    booking.getProviderId());
+        }
 
         if (Objects.nonNull(
                 booking.getServiceId())

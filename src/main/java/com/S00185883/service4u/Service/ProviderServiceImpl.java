@@ -50,6 +50,13 @@ public class ProviderServiceImpl
                     provider.getAddressLineOne());
         }
         if (Objects.nonNull(
+                provider.getImage())
+                && !"".equalsIgnoreCase(
+                provider.getImage())) {
+            depDB.setImage(
+                    provider.getImage());
+        }
+        if (Objects.nonNull(
                 provider.getAddressLineTwo())
                 && !"".equalsIgnoreCase(
                 provider.getAddressLineTwo())) {

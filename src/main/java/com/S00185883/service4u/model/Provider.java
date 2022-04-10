@@ -144,4 +144,6 @@ public class Provider {
     private Long phone;
     @Column(name="email")
     private String email;
+    @Column(name="image")
+    private String image;
 }

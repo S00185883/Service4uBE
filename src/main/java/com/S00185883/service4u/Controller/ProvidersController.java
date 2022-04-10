@@ -27,7 +27,7 @@ public class ProvidersController {
     }
 
     // Read operation
-    @GetMapping("/providers/sector/")
+    @GetMapping("/providers/sector/All")
     @CrossOrigin(origins = "http://localhost:3000")
     public List<Provider> fetchProviderList()
     {

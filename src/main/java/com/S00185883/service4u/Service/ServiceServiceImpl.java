@@ -1,6 +1,7 @@
 package com.S00185883.service4u.Service;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 import com.S00185883.service4u.Repository.ServiceRepository;
 import com.S00185883.service4u.model.Provider;
@@ -65,5 +66,14 @@ public class ServiceServiceImpl
     public void deleteServicesById(Long serviceId) {
         serviceRepository.deleteById(serviceId);
 
+    }
+
+    @Override
+    public List<Services> findByProviderid(Long providerid) {
+        return (List<Services>)
+                serviceRepository.findByProviderid(providerid);     }
+    @Override
+    public Optional<Services> findById(Long serviceId) {
+        return serviceRepository.findById(serviceId);
     }
 }

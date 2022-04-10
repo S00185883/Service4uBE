@@ -1,10 +1,12 @@
 package com.S00185883.service4u.Controller;
 
 import java.util.List;
+import java.util.Optional;
 // Importing required classes
 import javax.validation.Valid;
 
 import com.S00185883.service4u.Service.ServiceService;
+import com.S00185883.service4u.model.Provider;
 import com.S00185883.service4u.model.Services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -53,5 +55,19 @@ public class ServiceController {
         serviceService.deleteServicesById(
                 serviceId);
         return "Deleted Successfully";
+    }
+    @GetMapping("/services/provider/{providerid}")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public List<Services> findByProviderid(@PathVariable("providerid") Long providerid)
+    {
+        return serviceService.findByProviderid(providerid);
+
+    }
+    @GetMapping("/service/{serviceId}")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public Optional<Services> findById(@PathVariable("serviceId") Long serviceId)
+    {
+        return serviceService.findById(serviceId);
+
     }
 }
