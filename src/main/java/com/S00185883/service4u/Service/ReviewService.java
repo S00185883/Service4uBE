@@ -21,6 +21,6 @@ public interface ReviewService {
 
     // Delete operation
     void deleteReviewById(Long reviewId);
-     List<Review> findByProviderid(String providerid);
+     List<Review> findByProviderid(long providerid);
      List<Review> findByCustomer(String customeremail);
 }

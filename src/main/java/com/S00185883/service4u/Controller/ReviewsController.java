@@ -57,7 +57,7 @@ public class ReviewsController {
     }
     @GetMapping("/review/provider/{providerid}")
     @CrossOrigin(origins = "http://localhost:3000")
-    public List<Review> findByProviderid(@PathVariable("providerid") String providerid)
+    public List<Review> findByProviderid(@PathVariable("providerid") long providerid)
     {
         return reviewService.findByProviderid(providerid);
 

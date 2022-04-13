@@ -22,7 +22,7 @@ public class Review {
     @Column(name="reviewid")
     private Long reviewid;
     @Column(name="providerid")
-    private String providerid;
+    private Long providerid;
     @Column(name="customerid")
     private String customer;
     @Column(name="customeremail")

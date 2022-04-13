@@ -80,7 +80,7 @@ public class ReviewServiceImpl
     }
 
     @Override
-    public List<Review> findByProviderid(String providerid) {
+    public List<Review> findByProviderid(long providerid) {
         return (List<Review>)
                 reviewRepository.findByProviderid(providerid);
     }
