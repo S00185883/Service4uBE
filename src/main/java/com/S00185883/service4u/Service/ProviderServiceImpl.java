@@ -121,5 +121,11 @@ public class ProviderServiceImpl
         return providersRepository.findById(providerId);
     }
 
+    @Override
+    public List<Provider> findByCountyAndSector(String county, String sector) {
+        return (List<Provider>)
+                providersRepository.findByCountyAndSector(county,sector);
+    }
+
 
 }

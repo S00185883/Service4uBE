@@ -14,6 +14,7 @@ public interface BookingService {
                           Long bookingId);
     // Delete operation
     void deleteBookingById(Long bookingId);
+    List<Booking> findByCustomer(String customeremail);
 }
 
 

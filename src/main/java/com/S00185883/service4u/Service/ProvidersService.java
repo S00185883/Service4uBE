@@ -26,4 +26,5 @@ public interface ProvidersService {
     List<Provider> findByCounty(String county);
     List<Provider> findBySector(String sector);
     Optional<Provider> findById(Long providerId);
+    List<Provider> findByCountyAndSector(String county,String sector);
 }

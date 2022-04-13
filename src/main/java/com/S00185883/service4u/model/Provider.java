@@ -146,4 +146,6 @@ public class Provider {
     private String email;
     @Column(name="image")
     private String image;
+    @Column(name="description")
+    private String description;
 }

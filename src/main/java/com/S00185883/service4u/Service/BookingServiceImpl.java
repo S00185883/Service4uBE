@@ -4,6 +4,7 @@ import com.S00185883.service4u.Repository.BookingRepository;
 import com.S00185883.service4u.Repository.ProvidersRepository;
 import com.S00185883.service4u.model.Booking;
 import com.S00185883.service4u.model.Provider;
+import com.S00185883.service4u.model.Review;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,13 +29,7 @@ public class BookingServiceImpl implements BookingService {
                 = bookingRepository.findById(bookingId)
                 .get();
 
-        if (Objects.nonNull(
-                booking.getName())
-                && !"".equalsIgnoreCase(
-                booking.getName())) {
-            depDB.setName(
-                    booking.getName());
-        }
+
         if (Objects.nonNull(
                 booking.getProviderId())
                 && !"".equalsIgnoreCase(
@@ -42,7 +37,13 @@ public class BookingServiceImpl implements BookingService {
             depDB.setProviderId(
                     booking.getProviderId());
         }
-
+        if (Objects.nonNull(
+                booking.getCustomer())
+                && !"".equalsIgnoreCase(
+                String.valueOf(booking.getCustomer()))) {
+            depDB.setCustomer(
+                    booking.getCustomer());
+        }
         if (Objects.nonNull(
                 booking.getServiceId())
                 && !"".equalsIgnoreCase(
@@ -50,13 +51,7 @@ public class BookingServiceImpl implements BookingService {
             depDB.setServiceId(
                     booking.getServiceId());
         }
-        if (Objects.nonNull(
-                booking.getCustomerId())
-                && !"".equalsIgnoreCase(
-                String.valueOf(booking.getCustomerId()))) {
-            depDB.setCustomerId(
-                    booking.getCustomerId());
-        }
+
         if (Objects.nonNull(booking.getLocation())
                 && !"".equalsIgnoreCase(
                 booking.getLocation())) {
@@ -80,6 +75,11 @@ public class BookingServiceImpl implements BookingService {
 
     @Override
     public void deleteBookingById(Long bookingId) {
+        bookingRepository.deleteById(bookingId);
 
     }
+    @Override
+    public List<Booking> findByCustomer(String customeremail) {
+        return (List<Booking>)
+                bookingRepository.findByCustomer(customeremail);    }
 }

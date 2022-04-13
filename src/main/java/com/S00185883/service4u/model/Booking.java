@@ -20,23 +20,18 @@ public class Booking {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="bookingId")
     private Long bookingId;
-    @Column(name="name")
-    private String name;
     @Column(name="location")
     private String location;
     @Column(name="date")
-    private Date date;
+    private String date;
     @Column(name="time")
-    private Time time;
+    private String time;
     @Column(name="serviceId")
-   // @OneToOne(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
-    private long serviceId;
-    @Column(name="customerId")
-    // @ManyToOne(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
-    private long customerId;
+    private String serviceId;
+    @Column(name="customer")
+    private String customer;
     @Column(name="providerId")
-    // @ManyToOne(fetch = FetchType.EAGER, cascade=CascadeType.ALL)
-    private long providerId;
+    private String providerId;
 
 
 }

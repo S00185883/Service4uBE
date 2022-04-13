@@ -11,4 +11,6 @@ import org.springframework.stereotype.Repository;
 public interface ProvidersRepository  extends JpaRepository<Provider, Long> {
     public List<Provider> findByCounty(String county);
     public List<Provider> findBySector(String sector);
+    public List<Provider> findByCountyAndSector(String county,String sector);
+
 }

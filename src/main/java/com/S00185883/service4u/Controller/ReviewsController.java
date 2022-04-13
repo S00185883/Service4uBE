@@ -6,6 +6,7 @@ import javax.validation.Valid;
 
 import com.S00185883.service4u.Service.ReviewService;
 import com.S00185883.service4u.model.Review;
+import com.S00185883.service4u.model.Services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -53,5 +54,19 @@ public class ReviewsController {
         reviewService.deleteReviewById(
                 reviewId);
         return "Deleted Successfully";
+    }
+    @GetMapping("/review/provider/{providerid}")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public List<Review> findByProviderid(@PathVariable("providerid") Long providerid)
+    {
+        return reviewService.findByProviderid(providerid);
+
+    }
+    @GetMapping("/review/{customeremail}")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public List<Review> findByCustomer(@PathVariable("customeremail") String customeremail)
+    {
+        return reviewService.findByCustomer(customeremail);
+
     }
 }

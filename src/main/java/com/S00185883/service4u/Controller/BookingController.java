@@ -7,6 +7,7 @@ import javax.validation.Valid;
 
 import com.S00185883.service4u.Service.BookingService;
 import com.S00185883.service4u.model.Booking;
+import com.S00185883.service4u.model.Review;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -52,5 +53,12 @@ public class BookingController {
         bookingService.deleteBookingById(
                 bookingId);
         return "Deleted Successfully";
+    }
+    @GetMapping("/booking/{customeremail}")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public List<Booking> findByCustomer(@PathVariable("customeremail") String customeremail)
+    {
+        return bookingService.findByCustomer(customeremail);
+
     }
 }

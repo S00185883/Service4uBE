@@ -76,4 +76,16 @@ public class ProvidersController {
         return providersService.findById(providerId);
 
     }
+    @GetMapping("/providers/{county}/{sector}")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public List<Provider> findByCountyAndSector(@PathVariable("county") String county,@PathVariable("sector") String sector)
+    {
+        if(sector=="All") {
+            return providersService.findByCounty(county);
+        }
+        else {
+            return providersService.findByCountyAndSector(county, sector);
+        }
+
+    }
 }

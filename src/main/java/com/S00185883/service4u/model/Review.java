@@ -24,11 +24,13 @@ public class Review {
     @Column(name="providerid")
     private Long providerid;
     @Column(name="customerid")
-    private Long customerid;
+    private String customer;
+    @Column(name="customeremail")
+    private String customeremail;
     @Column(name="review")
     private String review;
     @Column(name="rating")
     private Integer rating;
     @Column(name="date")
-    private Date date;
+    private String date;
 }

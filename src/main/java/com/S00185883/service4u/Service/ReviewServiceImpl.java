@@ -5,6 +5,7 @@ import java.util.Objects;
 import com.S00185883.service4u.Repository.ReviewsRepository;
 import com.S00185883.service4u.model.Provider;
 import com.S00185883.service4u.model.Review;
+import com.S00185883.service4u.model.Services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,11 +36,11 @@ public class ReviewServiceImpl
                 .get();
 
         if (Objects.nonNull(
-                review.getCustomerid())
+                review.getCustomer())
                 && !"".equalsIgnoreCase(
-                String.valueOf(review.getCustomerid()))) {
-            depDB.setCustomerid(
-                    review.getCustomerid());
+                String.valueOf(review.getCustomer()))) {
+            depDB.setCustomer(
+                    review.getCustomer());
         }
 
         if (Objects.nonNull(
@@ -77,4 +78,15 @@ public class ReviewServiceImpl
         reviewRepository.deleteById(providerId);
 
     }
+
+    @Override
+    public List<Review> findByProviderid(Long providerid) {
+        return (List<Review>)
+                reviewRepository.findByProviderid(providerid);
+    }
+
+    @Override
+    public List<Review> findByCustomer(String customeremail) {
+        return (List<Review>)
+                reviewRepository.findByCustomer(customeremail);    }
 }
