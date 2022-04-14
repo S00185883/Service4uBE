@@ -20,7 +20,7 @@ public class ServiceController {
 
     // Save operation
     @PostMapping("/services")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://service4u.netlify.app")
     public Services saveServices(
             @Valid @RequestBody Services service)
     {
@@ -29,7 +29,7 @@ public class ServiceController {
 
     // Read operation
     @GetMapping("/services")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://service4u.netlify.app")
     public List<Services> fetchServicesList()
     {
         return serviceService.fetchServicesList();
@@ -37,7 +37,7 @@ public class ServiceController {
 
     // Update operation
     @PutMapping("/services/{id}")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://service4u.netlify.app")
     public Services
     updateDepartment(@RequestBody Services service,
                      @PathVariable("id") Long serviceId)
@@ -48,7 +48,7 @@ public class ServiceController {
 
     // Delete operation
     @DeleteMapping("/services/{id}")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://service4u.netlify.app")
     public String deleteServicesById(@PathVariable("id")
                                            Long serviceId)
     {
@@ -57,14 +57,14 @@ public class ServiceController {
         return "Deleted Successfully";
     }
     @GetMapping("/services/provider/{providerid}")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://service4u.netlify.app")
     public List<Services> findByProviderid(@PathVariable("providerid") Long providerid)
     {
         return serviceService.findByProviderid(providerid);
 
     }
     @GetMapping("/service/{serviceId}")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://service4u.netlify.app")
     public Optional<Services> findById(@PathVariable("serviceId") Long serviceId)
     {
         return serviceService.findById(serviceId);

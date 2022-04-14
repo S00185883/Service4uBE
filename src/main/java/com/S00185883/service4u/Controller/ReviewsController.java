@@ -19,7 +19,7 @@ public class ReviewsController {
 
     // Save operation
     @PostMapping("/reviews")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://service4u.netlify.app")
     public Review saveReview(
             @Valid @RequestBody Review review)
     {
@@ -28,7 +28,7 @@ public class ReviewsController {
 
     // Read operation
     @GetMapping("/reviews")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://service4u.netlify.app")
     public List<Review> fetchReviewList()
     {
         return reviewService.fetchReviewList();
@@ -36,7 +36,7 @@ public class ReviewsController {
 
     // Update operation
     @PutMapping("/reviews/{id}")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://service4u.netlify.app")
     public Review
     updateDepartment(@RequestBody Review review,
                      @PathVariable("id") Long reviewId)
@@ -47,7 +47,7 @@ public class ReviewsController {
 
     // Delete operation
     @DeleteMapping("/reviews/{id}")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://service4u.netlify.app")
     public String deleteReviewById(@PathVariable("id")
                                              Long reviewId)
     {
@@ -56,14 +56,14 @@ public class ReviewsController {
         return "Deleted Successfully";
     }
     @GetMapping("/review/provider/{providerid}")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://service4u.netlify.app")
     public List<Review> findByProviderid(@PathVariable("providerid") long providerid)
     {
         return reviewService.findByProviderid(providerid);
 
     }
     @GetMapping("/review/{customeremail}")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://service4u.netlify.app")
     public List<Review> findByCustomer(@PathVariable("customeremail") String customeremail)
     {
         return reviewService.findByCustomer(customeremail);

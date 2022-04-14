@@ -19,7 +19,7 @@ public class ProvidersController {
 
     // Save operation
     @PostMapping("/providers")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://service4u.netlify.app")
     public Provider saveProvider(
             @Valid @RequestBody Provider provider)
     {
@@ -28,7 +28,7 @@ public class ProvidersController {
 
     // Read operation
     @GetMapping("/providers/sector/All")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://service4u.netlify.app")
     public List<Provider> fetchProviderList()
     {
         return providersService.fetchProviderList();
@@ -36,7 +36,7 @@ public class ProvidersController {
 
     // Update operation
     @PutMapping("/providers/{id}")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://service4u.netlify.app")
     public Provider
     updateDepartment(@RequestBody Provider provider,
                      @PathVariable("id") Long providerId)
@@ -47,7 +47,7 @@ public class ProvidersController {
 
     // Delete operation
     @DeleteMapping("/providers/{id}")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://service4u.netlify.app")
     public String deleteProviderById(@PathVariable("id")
                                                Long providerId)
     {
@@ -56,28 +56,28 @@ public class ProvidersController {
         return "Deleted Successfully";
     }
     @GetMapping("/providers/{county}")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://service4u.netlify.app")
     public List<Provider> findByCounty(@PathVariable("county") String county)
     {
         return providersService.findByCounty(county);
 
     }
     @GetMapping("/providers/sector/{sector}")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://service4u.netlify.app")
     public List<Provider> findBySector(@PathVariable("sector") String sector)
     {
         return providersService.findBySector(sector);
 
     }
     @GetMapping("/provider/{providerId}")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://service4u.netlify.app")
     public Optional<Provider> findById(@PathVariable("providerId") Long providerId)
     {
         return providersService.findById(providerId);
 
     }
     @GetMapping("/providers/{county}/{sector}")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://service4u.netlify.app")
     public List<Provider> findByCountyAndSector(@PathVariable("county") String county,@PathVariable("sector") String sector)
     {
         if(sector=="All") {

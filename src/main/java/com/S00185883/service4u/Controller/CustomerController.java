@@ -18,7 +18,7 @@ public class CustomerController {
 
     // Save operation
     @PostMapping("/customers")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://service4u.netlify.app")
     public Customer saveCustomer(
             @Valid @RequestBody Customer customer)
     {
@@ -27,7 +27,7 @@ public class CustomerController {
 
     // Read operation
     @GetMapping("/customers")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://service4u.netlify.app")
     public List<Customer> fetchCustomerList()
     {
         return customerService.fetchCustomerList();
@@ -35,7 +35,7 @@ public class CustomerController {
 
     // Update operation
     @PutMapping("/customers/{id}")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://service4u.netlify.app")
     public Customer
     updateDepartment(@RequestBody Customer customer,
                      @PathVariable("id") Long customerId)
@@ -46,7 +46,7 @@ public class CustomerController {
 
     // Delete operation
     @DeleteMapping("/customers/{id}")
-    @CrossOrigin(origins = "http://localhost:3000")
+    @CrossOrigin(origins = "https://service4u.netlify.app")
     public String deleteCustomerById(@PathVariable("id")
                                              Long customerId)
     {
